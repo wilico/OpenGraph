@@ -146,7 +146,7 @@ class OpenGraphTests: XCTestCase {
         OHHTTPStubs.stubRequests(passingTest: { request -> Bool in
             return true
         }) { request -> OHHTTPStubsResponse in
-            OHHTTPStubsResponse(data: "あ".data(using: String.Encoding.shiftJIS)!, statusCode: 200, headers: nil)
+            OHHTTPStubsResponse(data: "あ".data(using: String.Encoding.utf8)!, statusCode: 200, headers: nil)
         }
         
         let url = URL(string: "https://www.example.com")!
